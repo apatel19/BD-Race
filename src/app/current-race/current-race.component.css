@@ -1,0 +1,27 @@
+
+.currentRace-text {
+  font-size: 20px;
+  color: black;
+}
+
+.label-content{
+  padding: 20px;
+  padding-right: 30px;
+  padding-left: 50px;
+}
+.side-nav-container {
+  width: 250;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.add-team-button{
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+

@@ -1,0 +1,36 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.label-content{
+  padding: 20px;
+  /* padding-right: 30px;
+  padding-left: 50px; */
+  text-align: center;
+}
+
+.bottom_div {
+  /* height: 40px; */
+  position: fixed;
+  bottom:0%;
+  padding: 10px;
+  width:100%;
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.slideSection {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.slideMargin {
+  margin: 10px;
+}
+
+.cell {
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  align-content: center;
+}

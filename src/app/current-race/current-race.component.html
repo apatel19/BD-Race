@@ -1,0 +1,9 @@
+
+<mat-list role="list">
+    <h3 mat-subheader> Current Race </h3>
+    <mat-list-item role="listitem" *ngFor="let current of currentRace | async">
+          <label class="label-content"> {{current.teamName}} </label>
+          <label class="label-content"> {{current.portId}} </label>
+          <label class="label-content"> {{current.droneName}} </label>
+    </mat-list-item>
+  </mat-list>

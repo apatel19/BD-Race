@@ -1,0 +1,31 @@
+
+.first-row {
+  margin: 0 auto;
+  font-size: 40px;
+  /* padding: 10px 70px; */
+}
+
+.button-group button {
+  display: flex;
+  background-color: blue;
+  border: 1px solid rgb(198, 206, 218);
+  color: white;
+  margin: 0 0;
+  float: right;
+  /* padding: 10px 30px;*/
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.center {
+  width: 800px;
+}
+
+.button-text {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}

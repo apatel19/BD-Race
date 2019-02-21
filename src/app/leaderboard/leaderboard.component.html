@@ -1,0 +1,8 @@
+<mat-list>
+  <h3 mat-subheader> Leaderboard </h3>
+  <mat-list-item *ngFor="let position of leaderBoard">
+      <mat-icon mat-list-icon>position</mat-icon>
+      <label class="label-content">{{position.teamName}}</label>
+      <label class="label-content"> {{position.finishedTime}} </label>
+    </mat-list-item>
+</mat-list>

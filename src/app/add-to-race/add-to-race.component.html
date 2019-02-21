@@ -1,0 +1,42 @@
+<div class="container">
+    <div *ngIf="isRegistrationOpen != '' " > {{isRegistrationOpen}} </div>
+    <h4>Enter your drone to race!</h4>
+    <form #addToRaceForm="ngForm" (ngSubmit)="registerToRace(addToRaceForm)">
+      <div class="form-group">
+        <label for="teamName">Enter in Team name</label>
+        <input required maxlength="15" minlength="4" ngModel name="teamName" #teamName='ngModel' id="teamName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="teamName.touched && !teamName.valid">
+          <div *ngIf='teamName?.errors.required'>  Team Name is required. </div>
+          <div *ngIf='teamName?.errors.maxlength || teamName?.errors.minlength'> Name length should be between 3 to 15 </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="droneName">Enter in Drone name</label>
+        <input required maxlength="15" minlength="4" ngModel name="droneName" #droneName='ngModel' id="droneName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="droneName.touched && !droneName.valid">
+          <div *ngIf='droneName?.errors.required'>  Drone Name is required. </div>
+          <div *ngIf='droneName?.errors.maxlength || droneName?.errors.minlength'> Drone Name length should be between 3 to 15 </div>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="portId">Enter in GIVEN Port ID (Ask if not given)</label>
+          <input required maxlength="3" minlength="3" pattern="[0-9]*" ngModel name="portId" #portId='ngModel' id="portId" type="text" class="form-control">
+          <div class="alert alert-danger" *ngIf="portId.touched && !portId.valid">
+           <div *ngIf='portId?.errors.required'>  Port Id is required. </div>
+           <div *ngIf='portId?.errors.maxlength || portId?.errors.minlength'> Port Id length should be between 3 to 15 </div>
+           <div *ngIf='portId?.errors.pattern'> Only numbers are allowed. </div>
+          </div>
+      </div>
+      <div class="form-group">
+            <label for="password">Enter in GIVEN password (Ask if not given)</label>
+            <input required maxlength="7" minlength="7" pattern="BD-Race" required ngModel name="password" #password='ngModel' id="password" type="password" class="form-control">
+            <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+              <div *ngIf='password?.errors.required'>  Password is required. </div>
+              <div *ngIf='password?.errors.maxlength || password?.errors.minlength'> Password length should be 7. Ask if not Given. </div>
+              <div *ngIf='password?.errors.pattern'> Password doesn't match given pattern.</div>
+            </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>

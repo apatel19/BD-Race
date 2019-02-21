@@ -1,0 +1,38 @@
+<div *ngIf="!isAuth">
+  <h4> Referee Auth </h4>
+  <form #refereeAuthForm="ngForm" (ngSubmit)="checkRefereeAuth(refereeAuthForm)">
+    <div class="form-group">
+      <label for="refereeAuth">Enter Password (Ask Organizer if not given): </label>
+      <input required ngModel name="refereeAuth" #refereeAuth='ngModel' id='refereeAuth' type="password" class="form-control">
+      <div class="alert alert-danger" *ngIf="refereeAuth.touched && !refereeAuth.valid">
+          <div *ngIf='refereeAuth?.errors.required'>  Password is required. </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit"> Submit </button>
+  </form>
+</div>
+<div *ngIf='isAuth'>
+<hr>
+  <table>
+      <tr>
+        <th>Team Name </th>
+        <th>Drone Name </th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let current of currentRace | async">
+        <td class="cell">{{ current.teamName }}</td>
+        <td class="cell">{{ current.droneName }}</td>
+        <td> <button mat-raised-button color="warn" id="current.portId" (click)='stopButtonTapped(current.portId)' > STOP </button></td>
+      </tr>
+  </table>
+  <hr>
+  <div class="bottom_div">
+  <mat-slide-toggle
+      (change)='toggleRegistration($event)'
+      [(ngModel)]='isChecked' style="padding: 20px;">
+      <label style="padding: 20px; font-size: 20px;"> {{registration}} </label>
+  </mat-slide-toggle>
+
+  <div style="text-align: center; padding-bottom: 10px;"><button mat-flat-button color="primary" style="font-size: 20px;" > Begin to Race! </button></div>
+  </div>
+</div>
